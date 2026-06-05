@@ -13,8 +13,8 @@
 
 This binary release contains ready-to-use executables:
 - **apex_dma** — Host-side server (Linux)
-- **Overlay.exe** — In-game overlay (Windows guest)
-- **Client.exe** — Configuration client (Windows guest)
+- **Overlay.exe** — In-game overlay already obfuscated (Windows guest)
+- **Client.exe** — Client already obfuscated (Windows guest)
 - **PML4/CR3** — Not BruteForce technique anymore
 - **Memflow connectors** — Pre-built KVM/QEMU drivers
 - **Offset dumper** — Utility to extract game offsets
@@ -47,7 +47,7 @@ No source code compilation necessary.
 
 ```bash
 # Download the latest release
-unzip adkv-bin-v3.0.3.55.zip
+unzip adkv-bin.zip
 extract apex_dma to linux (host)
 extract apex_guest to windows VM (guset)
 ```
@@ -85,10 +85,13 @@ ls -la ./memflow-connectors/
    - **Note:** Nothing will appear initially — this prevents screenshot detection
 
 2. **Start Game:**
+```bash
+wait until your enter in lobby
+```
 
 3. **Start Host Server (Linux host):**
 ```bash
-cd cd adkv-bin/apex_dma/build
+cd adkv-bin/apex_dma/build
 sudo -E ./apex_dma
 ```
 
@@ -96,7 +99,7 @@ sudo -E ./apex_dma
 ```bash
 [✓] Memflow initialized
 [✓] KVM connector loaded
-[✓] Waiting for guest connection...
+[✓] ...
 ```
 
 ### Step 3: Configure In-Game
