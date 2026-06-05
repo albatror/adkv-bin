@@ -15,6 +15,7 @@ This binary release contains ready-to-use executables:
 - **apex_dma** — Host-side server (Linux)
 - **Overlay.exe** — In-game overlay (Windows guest)
 - **Client.exe** — Configuration client (Windows guest)
+- **PML4/CR3** — Not BruteForce technique anymore
 - **Memflow connectors** — Pre-built KVM/QEMU drivers
 - **Offset dumper** — Utility to extract game offsets
 
@@ -47,12 +48,13 @@ No source code compilation necessary.
 ```bash
 # Download the latest release
 unzip adkv-bin-v3.0.3.55.zip
-cd adkv-bin
+extract apex_dma to linux (host)
+extract apex_guset to windows VM (guset)
 ```
 
 ### 2. Host Setup (Linux)
 
-#### Load Memflow Module
+#### Load Memflow Module on host
 ```bash
 # Load the memflow kernel module (required each boot)
 sudo modprobe memflow
@@ -70,55 +72,23 @@ ls -la ./memflow-connectors/
 
 ### 3. Guest Setup (Windows)
 
-1. **Copy Guest Files** — Transfer to your Windows guest:
-   - `Overlay.exe` (obfuscated)
-   - `Client.exe` (obfuscated)
-   - `Settings.txt` (default config)
-
-2. **Obfuscation Warning** ⚠️
+**Obfuscation Warning** ⚠️
    ```
-   CRITICAL: Always obfuscate Client.exe and Overlay.exe before using online.
-   Use tools like VMProtect, Themida, or similar to prevent detection.
-   Unobfuscated binaries may be detected by anti-cheat.
+   CRITICAL: the Client.exe and Overlay.exe are already obfuscated to avoid detection by anti-cheat.
    ```
-
-3. **Start Services**
-   - Launch `Client.exe` first
-   - Then launch `Overlay.exe`
-   - **Note:** Nothing will appear initially — this prevents screenshot detection
-
----
-
-## ⚙️ Critical Configuration Step
-
-### Get Your Offset
-
-1. **Start on Guest:**
-   ```
-   1. Run Client.exe
-   2. Run Overlay.exe
-   ```
-
-2. **Check Client Console:**
-   - Look for the displayed offset (e.g., `0x123ABC`)
-   - **Screenshot or note this value**
-
-3. **Close Both Applications:**
-   ```
-   Press F4 to emergency close
-   ```
-
-4. **Note for Future Use:**
-   - This offset is **game-version specific**
-   - Keep it safe; you'll need it if you update the game
-
----
 
 ## ▶️ Running the Hack
 
-### Step 1: Start Host Server (Linux)
+1. **Start on Windows VM (Guest):**
+   - Launch `Overlay.exe` first
+   - Then launch `Client.exe`
+   - **Note:** Nothing will appear initially — this prevents screenshot detection
+
+2. **Start Game:**
+
+3. **Start Host Server (Linux host):**
 ```bash
-cd build
+cd cd adkv-bin/apex_dma/build
 sudo -E ./apex_dma
 ```
 
@@ -128,11 +98,6 @@ sudo -E ./apex_dma
 [✓] KVM connector loaded
 [✓] Waiting for guest connection...
 ```
-
-### Step 2: Start Guest Services (Windows)
-1. Launch `Client.exe`
-2. Launch `Overlay.exe`
-3. Start **Apex Legends**
 
 ### Step 3: Configure In-Game
 - Press **INSERT** to open the menu
