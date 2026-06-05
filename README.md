@@ -35,7 +35,7 @@ No source code compilation necessary.
 
 #### Guest (Windows)
 - **OS:** Windows 10 (Version 20H1 or earlier; 22H2 tested with CR3 fix)
-- **Not recommended:** Windows 11, Windows 23H2+
+- **Not recommended - test needed with new PML4/CR3:** Windows 11, Windows 23H2+
 - **Resolution:** 2560x1440 (default) or 1920x1080 (manual config)
 - **.NET Framework:** May be required for executables
 
@@ -49,7 +49,7 @@ No source code compilation necessary.
 # Download the latest release
 unzip adkv-bin-v3.0.3.55.zip
 extract apex_dma to linux (host)
-extract apex_guset to windows VM (guset)
+extract apex_guest to windows VM (guset)
 ```
 
 ### 2. Host Setup (Linux)
@@ -93,7 +93,7 @@ sudo -E ./apex_dma
 ```
 
 **Output:**
-```
+```bash
 [✓] Memflow initialized
 [✓] KVM connector loaded
 [✓] Waiting for guest connection...
