@@ -58,7 +58,8 @@ r5dumper SHA256          5e34126b4fa0f1ecd89a8f8d10139837869d028a195425ae1f87a95
 # Download the latest release
 unzip adkv-bin.zip
 extract apex_dma to linux (host)
-extract apex_guest to windows VM (guset)
+extract apex_guest to windows VM (guest)
+extract twice apex_guest\x64\Debug.zip with passwords provided in PASSWORD.txt
 ```
 
 ### 2. Host Setup (Linux)
