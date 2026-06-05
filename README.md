@@ -299,10 +299,10 @@ lsmod | grep memflow
 
 ### Issue: Offsets out of date after game update
 ```bash
-1. Restart the hack
-2. Press F9 to dump new offsets
-3. Close and restart Overlay/Client
-4. Offsets auto-update to new values
+1. Go to training and do some stuff.
+2. Press F9 to dump new offsets, wait until it completed.
+3. Press F10 to dynamically update Game memory and update offsets.h with the new Dump.
+4. Done.
 ```
 
 ### Memflow Setup Issues (FAQ)
