@@ -21,8 +21,11 @@ This binary release contains ready-to-use executables:
 
 No source code compilation necessary.
 
+#
 apex_dma SHA256          39aff601e5e30ef62dbfeb79d7fcd9811b14ea3f831720ca8e4e79d8f1dbc2a1
+#
 Client SHA256          26B578ABA5A426B2A157AEAA83B74126E53F46D97EBFB689176B3A2CF21C7A0F 
+#
 Overlay SHA256          33DEC0100865F1C9CF281D251A608298DE56644869899196CF8B5C01593A7D27 
 
 
